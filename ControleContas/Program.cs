@@ -16,3 +16,13 @@ Console.WriteLine($"A conta de maior saldo é {conta3.ContaMaiorSaldo}");
 conta.Titular = cliente1;
 
 Console.WriteLine($"O titular da conta {conta.Numero} é o cliente {conta.Titular.Nome}");
+
+// 29 de Março de 2023
+Console.WriteLine($"Saldo da conta {conta2.Numero} antes o deposito: {conta2.Saldo}!!");
+conta2.Deposito(99.42m);
+Console.WriteLine($"Saldo da conta {conta2.Numero} após o deposito: {conta2.Saldo}!!");
+conta2.Deposito(-99.42m);
+Console.WriteLine($"Saldo da conta {conta2.Numero} após o deposito inválido: {conta2.Saldo} !!");
+
+conta2.Saque(100.10m);
+Console.WriteLine($"O saldo da conta {conta2.Numero} após o saque de: {conta2.Saldo}!!");

@@ -54,6 +54,24 @@ namespace ControleContas.Model
         }
 
         public Cliente Titular { get; set; }
+
+        public void Deposito(decimal valor)
+        {
+            if(valor > 0)
+            {
+                _saldo += valor;
+            }
+        }
+
+        public decimal Saque(decimal valorSaque)
+        {
+            if (valorSaque > _saldo)
+            {
+                throw new ArgumentException("O valor do saque não pode ser maior que o valor do saldo!!");
+            }
+            
+            return _saldo -= valorSaque;
+        }
     }
    
 }
